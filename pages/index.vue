@@ -52,7 +52,7 @@ export default {
                 dataAttributes: {
                   amount: '100.00'
                 },
-                autoSetDataUserIdToken: true
+                // autoSetDataUserIdToken: true
               },
               function () {
                 const button = window.paypal.Buttons({
@@ -64,6 +64,7 @@ export default {
                       flow: 'checkout',
                       amount: '100.00',
                       currency: 'EUR'
+
                     })
                   },
                   onApprove(data, actions) {
