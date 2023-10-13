@@ -47,6 +47,12 @@ export default {
           paypalCheckoutInstance.loadPayPalSDK(
               {
                 currency: 'EUR',
+                components: 'buttons,messages',
+                'enable-funding': 'paylater',
+                dataAttributes: {
+                  amount: '100.00'
+                },
+                autoSetDataUserIdToken: true
               },
               function () {
                 const button = window.paypal.Buttons({
@@ -57,8 +63,7 @@ export default {
                     return paypalCheckoutInstance.createPayment({
                       flow: 'checkout',
                       amount: '100.00',
-                      currency: 'EUR',
-                      requestBillingAgreement: true
+                      currency: 'EUR'
                     })
                   },
                   onApprove(data, actions) {
