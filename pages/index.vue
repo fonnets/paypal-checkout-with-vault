@@ -63,8 +63,9 @@ export default {
                     return paypalCheckoutInstance.createPayment({
                       flow: 'checkout',
                       amount: '100.00',
-                      currency: 'EUR'
-
+                      currency: 'EUR',
+                      requestBillingAgreement: true,
+                      autoSetDataUserIdToken: true
                     })
                   },
                   onApprove(data, actions) {
